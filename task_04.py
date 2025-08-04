@@ -10,16 +10,14 @@ from tensorflow.keras.layers import (
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
 
-# Define gesture labels (fixed spacing)
+
 gesture_names = [
     'palm', 'L', 'fist', 'fist moved', 'thumb',
     'index', 'OK', 'palm moved', 'C', 'down'
 ]
 
 def load_images(data_dir, img_size=(64, 64)):
-    """
-    Loads grayscale images and their labels from the dataset folder.
-    """
+  
     X, y = [],[]
     person_folders = sorted(os.listdir(data_dir))
 
@@ -151,3 +149,4 @@ plt.tight_layout()
 plt.savefig("training_results.png")
 plt.show()
 print("Training plot saved as 'training_results.png'")
+
